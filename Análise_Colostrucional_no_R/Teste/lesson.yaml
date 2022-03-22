@@ -1,0 +1,34 @@
+# Informações da lição
+- Class: meta
+  Course: Análise Colostrucional no R
+  Lesson: Teste
+  Author: Mariana Gonçalves e Pedro Poppolino
+  Type: Standard
+  Organization: Projeto Predicar - UFRJ
+  Version: 2.4.5
+
+
+# Mensagem de texto comum 
+- Class: text
+  Output: |-
+    Bem-vindo(a) ao curso de Análise Colostrucional no R! 
+    
+    Teremos algumas questões apenas para teste dos desenvolvedores :)
+
+
+# Comando do R
+- Class: cmd_question
+  Output: "Faça a variável \"soma\" receber a soma de 10 e 5."
+  CorrectAnswer: "soma <- 10 + 5"
+  AnswerTests: any_of_exprs("soma <- 10 + 5", "soma = 10 + 5")
+  Hint: "Escreva 'soma <- 10 + 5'"
+  
+
+# Comando do R preservando o valor da variável em caso de erro
+- Class: cmd_question
+  Output: "Adicione 50 à variável soma."
+  CorrectAnswer: "soma <- soma + 50"
+  AnswerTests: any_of_exprs('soma <- soma + 50', 'soma = soma + 50');
+               expr_creates_var('soma')
+  Hint: "Faça 'soma = soma + 50'"
+
