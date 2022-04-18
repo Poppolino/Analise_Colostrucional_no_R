@@ -1,0 +1,51 @@
+- Class: meta
+  Course: Analise Colostrucional no R
+  Lesson: Análise de Colexemas Covariantes
+  Author: Mariana Gonçalves e Pedro Poppolino
+  Type: Standard
+  Organization: Projeto Predicar - UFRJ
+  Version: 2.4.5
+
+
+# Questão 1: Visita a um site 
+- Class: video
+  Output: "Primeiro, baixe o arquivo \"dados_collexcovar.xlsx\" do seguinte repositório:\n\n https://drive.google.com/drive/folders/1MZ16oKjkO-ZJS2cb3hWMl9H4kWYtHDdb?usp=sharing\n\nDeseja visitar o repositório?"
+  VideoLink: https://drive.google.com/drive/folders/1MZ16oKjkO-ZJS2cb3hWMl9H4kWYtHDdb?usp=sharing 
+
+
+# Questão 2: Teste de comando
+- Class: cmd_question
+  Output: "Vamos usar um objeto chamado \"dados_collexcovar\" (por simplicidade) para armazenar o dataframe para a análise de colexemas covariantes, atribuindo a ele a função read_excel(), cujo argumento será o caminho para a planilha baixada. Você deve ter algo como:\n\ndados_collexcovar <- read_excel(\".../dados_collexcovar.xlsx\")\n\nOu\n\ndados_collexcovar <- read_excel(file.choose())\n\nTente executar essa operação."
+  CorrectAnswer: dados_collexcovar <- read_excel(file.choose())
+  AnswerTests: testa_igualdade_dataframes()
+  Hint: "Achou muito complicado? Podemos fazer manualmente também! Vá na aba \"Environment\" e clique em \"Import dataset\". Selecione \"From Excel\", busque o arquivo em seu computador e clique em \"Import\". Assim, o RStudio criará o código automaticamente para você."
+
+
+#Questão 3: Teste de comando
+- Class: cmd_question
+  Output: "Para a análise de colexemas covariantes, utilizaremos a função collex.covar() do pacote collostructions com o dataframe como argumento. Mas não se esqueça de atribuir o resultado da função a um objeto para não perder o seu trabalho! Portanto, use o comando a seguir: \n\nanalise.covar <- collex.covar(dados_collexcovar)"
+  CorrectAnswer: analise.covar <- collex.covar(dados_collexcovar)
+  AnswerTests: omnitest(correctExpr='analise.covar <- collex.covar(dados_collexcovar)');
+  Hint: "Tente usar o seguinte comando: analise.covar <- collex.covar(dados_collexcovar)"
+
+ 
+#Questão 4: Teste de comando
+- Class: cmd_question
+  Output: "Para visualizar os resultados, utilize a função View(), passando o objeto criado (analise.covar) como argumento."
+  CorrectAnswer: View(analise.covar)
+  AnswerTests: omnitest(correctExpr='View(analise.covar)'); 
+  Hint: "Use a função View() com o dataframe analise.covar dentro dos parênteses."
+
+
+# Questão 5: Teste de comando
+- Class: cmd_question
+  Output: "Agora, basta utilizar a função write_xlsx() para salvar o dataframe em seu computador. Preencha a função com o nome do dataframe seguido de file.choose() para criar uma nova planilha. O comando deve ficar parecido com:\n\nwrite_xlsx(analise.covar, file.choose())"
+  CorrectAnswer: write_xlsx(analise.covar, file.choose())
+  AnswerTests: omnitest(correctExpr='write_xlsx(analise.covar, file.choose())');
+  Hint: "Use a função write_xlsx() com o dataframe no primeiro parâmetro e file.choose() no segundo."
+
+
+# Questão 6: Mensagem de Texto
+- Class: text
+  Output: "Muito bem! A análise foi bem-sucedida!"
+
