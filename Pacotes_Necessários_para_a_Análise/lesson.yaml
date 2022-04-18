@@ -1,0 +1,71 @@
+- Class: meta
+  Course: Analise Colostrucional no R
+  Lesson: Pacotes Necessários para a Análise
+  Author: Mariana Gonçalves e Pedro Poppolino
+  Type: Standard
+  Organization: Projeto Predicar - UFRJ
+  Version: 2.4.5
+
+
+# Questão 1: Visita a um site 
+- Class: video
+  Output: "Para dar início a análise, precisamos baixar o pacote collostructions disponível no site da Susanne Flach: https://sfla.ch/collostructions/  \n\nLembre-se de baixar uma versão compatível com a versão do R que estiver utilizando.\n\nDeseja visitar o site da Susanne?"
+  VideoLink: https://sfla.ch/collostructions/
+
+
+# Questão 2: Mensagem de texto
+- Class: text
+  Output: "Após baixar o pacote, mantenha o arquivo zippado em seu computador e digite a seguinte função para instalá-lo no R: \n\ninstall.packages(file.choose(), repos=NULL)\n\nEssa função abrirá uma pasta onde você deverá selecionar o arquivo baixado."
+
+
+# Questão 3: Teste de comando
+- Class: cmd_question
+  Output: "Agora, tente instalar o pacote collostructions. Caso já o tenha instalado, execute um comando qualquer, como manga <- 10."
+  CorrectAnswer: install.packages(file.choose(), repos=NULL)
+  AnswerTests: testa_pacote_instalado("collostructions")
+  Hint: "Use o comando install.packages(file.choose(), repos=NULL) e selecione o arquivo baixado."
+  
+
+# Questão 4: Teste de comando
+- Class: cmd_question
+  Output: "Com o pacote collostructions instalado, abra-o com a função library(). Caso já o tenha carregado, execute um comando qualquer, como tomate <- 20."
+  CorrectAnswer: library(collostructions)
+  AnswerTests: testa_pacote_carregado("collostructions")
+  Hint: "Use o comando library() com collostructions dentro dos parênteses."
+  
+
+# Questão 5: Teste de comando
+- Class: cmd_question
+  Output: "Bom trabalho! \n\nAgora, instale o pacote readxl, de leitura de planilhas do Excel, para que possamos importar os dataframes que serão utilizados nas análises. Caso já o tenha instalado, execute um comando qualquer, como morango <- 2.\n\nObs: A instalação pode demorar um pouco."
+  CorrectAnswer: install.packages("readxl")
+  AnswerTests: testa_pacote_instalado("readxl")
+  Hint: "Use o comando install.packages() com \"readxl\" dentro dos parênteses."
+  
+
+# Questão 6: Teste de comando
+- Class: cmd_question
+  Output: "E carregue o pacote readxl instalado, usando a função library(). Caso já o tenha carregado, execute um comando qualquer, como melancia <- 1."
+  CorrectAnswer: library(readxl)
+  AnswerTests: testa_pacote_carregado("readxl")
+  Hint: "Use o comando library() com readxl dentro dos parênteses."
+
+
+# Questão 7: Teste de comando
+- Class: cmd_question
+  Output: "Para salvar os resultados das análises em nosso computador, precisaremos do pacote writexl. Instale o pacote writexl através da função install.packages(), caso ainda não o tenha feito. Se já o tiver instalado, entre com um comando qualquer.\n\nObs: A instalação pode demorar um pouco."
+  CorrectAnswer: install.packages("writexl")
+  AnswerTests: testa_pacote_instalado("writexl")
+  Hint: "Use o comando install.packages() com \"writexl\" dentro dos parênteses." 
+
+
+# Questão 8: Teste de comando
+- Class: cmd_question
+  Output: "Por fim, abra o pacote writexl com a função library(). Caso já o tenha carregado, execute um comando qualquer, como uva <- 0."
+  CorrectAnswer: library(writexl)
+  AnswerTests: testa_pacote_carregado("writexl")
+  Hint: "Use o comando library() com writexl dentro dos parênteses."  
+
+
+# Questão 9: Mensagem de texto comum 
+- Class: text
+  Output: "Já estamos quase lá! Agora só precisa escolher qual análise gostaria de fazer primeiro."
